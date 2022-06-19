@@ -1,14 +1,16 @@
-import { FC } from 'react';
+import * as React from 'react';
+
 
 import Head from "next/head"
 import Navbar from '../ui/Navbar';
 
-interface Props {
+type Props = {
+    children?: React.ReactNode,
     title?: string
 }
 
 
-export const Layout: FC<Props> = ({ children, title }) => {
+export const Layout: React.FC<Props>  = ({ children, title }) => {
     return (
         <>
             <Head>

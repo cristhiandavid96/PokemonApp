@@ -13,19 +13,19 @@ interface Props {
 }
 
 
-const HomePage: NextPage = ({pokemons}) => {
+const HomePage: NextPage<Props> = ({ pokemons }) => {
 
   return (
     <>
       <Layout title="Listado Pokemons">
 
-      <Grid.Container gap={ 2 } justify='flex-start'>
-        {
-          pokemons.map( ( pokemon ) => (
-            <PokemonCard key={ pokemon.id } pokemon={ pokemon } />
-          ))
-        }
-      </Grid.Container>
+        <Grid.Container gap={2} justify='flex-start'>
+          {
+            pokemons.map((pokemon) => (
+              <PokemonCard key={pokemon.id} pokemon={pokemon} />
+            ))
+          }
+        </Grid.Container>
       </Layout>
     </>
   )
