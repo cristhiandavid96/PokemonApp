@@ -15,7 +15,7 @@ export const Layout: React.FC<Props>  = ({ children, title }) => {
         <>
             <Head>
 
-                <title>{title || 'Pokemon'}</title>
+                <title >{title || 'Pokemon'}</title>
                 <meta name="author" content="cris" />
                 <meta name="descripcion" content={`Información sobre el pokemon ${title}`} />
                 <meta name="keywords" content={` ${title},pokemon,pokedex`} />
