@@ -9,8 +9,9 @@ type Props = {
     title?: string
 }
 
+const origin = (typeof window === 'undefined') ? '' : window.location.origin;
 
-export const Layout: React.FC<Props>  = ({ children, title }) => {
+export const Layout: React.FC<Props> = ({ children, title }) => {
     return (
         <>
             <Head>
@@ -19,10 +20,13 @@ export const Layout: React.FC<Props>  = ({ children, title }) => {
                 <meta name="author" content="cris" />
                 <meta name="descripcion" content={`Información sobre el pokemon ${title}`} />
                 <meta name="keywords" content={` ${title},pokemon,pokedex`} />
+                <meta property="og:title" content={`Información sobre ${title}`} />
+                <meta property="og:description" content={`Esta es la pagina sobre  ${title}`} />
+                <meta property="og:image" content={`${origin}/img/banner.png`} />
 
             </Head>
 
-            <Navbar/>
+            <Navbar />
 
             <main style={{
                 padding: '1rem',
