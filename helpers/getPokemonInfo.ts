@@ -5,14 +5,19 @@ import { PokemonApi } from '../services';
 
 export const getPokemonInfo = async (nameOrId: string) => {
 
-    const { data } = await PokemonApi.get<Pokemon>(`/pokemon/${nameOrId}`);
+    try {
+        const { data } = await PokemonApi.get<Pokemon>(`/pokemon/${nameOrId}`);
 
+        return {
+            id: data.id,
+            name: data.name,
+            sprites: data.sprites,
+        }
 
-    return {
-        id: data.id,
-        name: data.name,
-        sprites: data.sprites,
+    } catch (error) {
+        return null
     }
+
 
 
 }
